@@ -1,0 +1,15 @@
+112233, mouse, gaming, Logitech, black, wireless, 15, 7.50, 9.50, 3
+123456, keyboard, gaming, Corsair, black, wired, 2, 30.0, 39.99, UK
+124455, keyboard, standard, Advent, white, wired, 10, 3.50, 5.99, UK
+124566, mouse, standard, Advent, grey, wired, 15, 2.50, 4.99, 2
+125567, keyboard, flexible, Logitech, black, wireless, 4, 25.99, 30.0, US
+221101, mouse, standard, Logitech, black, wired, 3, 3.0, 6.99, 3
+221122, mouse, gaming, Razer, black, wired, 1, 28.0, 40.99, 7
+223044, mouse, gaming, Anker, blue, wired, 3, 16.0, 18.50, 10
+234555, keyboard, standard, Apple, white, wireless, 10, 75.50, 85.50, US
+235066, keyboard, flexible, Microsoft, black, wireless, 5, 45.50, 60.0, UK
+236677, mouse, standard, Asus, blue, wireless, 8, 10.0, 16.99, 5
+237700, mouse, gaming, Anker, black, wired, 1, 8.0, 11.99, 7
+237788, keyboard, standard, Logitech, grey, wired, 15, 6.50, 8.99, UK
+237799, mouse, standard, Logitech, grey, wireless, 13, 7.0, 8.0, 2
+238800, keyboard, flexible, Microsoft, black, wired, 10, 26.50, 30.0, US

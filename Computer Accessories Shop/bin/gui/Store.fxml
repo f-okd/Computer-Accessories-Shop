@@ -1,0 +1,269 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.Scene?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.Spinner?>
+<?import javafx.scene.control.SpinnerValueFactory.IntegerSpinnerValueFactory?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.control.Tooltip?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.text.Font?>
+
+<Scene xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1">
+   <root>
+      <TabPane id="tab_pane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="673.0" prefWidth="1222.0" tabClosingPolicy="UNAVAILABLE">
+        <tabs>
+          <Tab text="Store">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="693.0" prefWidth="1332.0">
+                     <children>
+                        <Button id="add_to_basket" layoutX="566.0" layoutY="597.0" mnemonicParsing="false" text="Add to basket" />
+                        <Button id="sign_out1" fx:id="sign_out_button1" layoutX="1114.0" layoutY="597.0" mnemonicParsing="false" text="Sign Out" />
+                        <Label layoutX="491.0" layoutY="10.0" text="Cassie's Computer Accessories">
+                           <font>
+                              <Font size="18.0" />
+                           </font></Label>
+                        <TableView id="store_tableview" fx:id="stock_info" layoutX="45.0" layoutY="52.0" prefHeight="540.0" prefWidth="1132.0">
+                           <columns>
+                              <TableColumn fx:id="barcode_m" prefWidth="100.0" text="Barcode" />
+                              <TableColumn fx:id="device_name_m" prefWidth="100.0" text=" Name" />
+                              <TableColumn fx:id="device_type_m" prefWidth="100.0" text="Type" />
+                              <TableColumn fx:id="brand_m" prefWidth="100.0" text="Brand" />
+                              <TableColumn fx:id="colour_m" prefWidth="100.0" text="Colour" />
+                              <TableColumn fx:id="connectivity_m" prefWidth="120.0" text="Connectivity" />
+                              <TableColumn fx:id="quantity_m" prefWidth="100.0" text="Quantity" />
+                              <TableColumn fx:id="availability_m" prefWidth="100.0" text="Availability" />
+                              <TableColumn id="original_cost" fx:id="original_cost_m" prefWidth="100.0" text="Original Cost" />
+                              <TableColumn fx:id="retail_price_m" prefWidth="100.0" text="Retail Price" />
+                              <TableColumn fx:id="additional_information_m" prefWidth="110.0" text="Extra Info" />
+                           </columns>
+                        </TableView>
+                        <Spinner fx:id="sort_by_keys" layoutX="1095.0" layoutY="11.0" prefHeight="25.0" prefWidth="82.0">
+							<valueFactory>
+               					<SpinnerValueFactory.IntegerSpinnerValueFactory amountToStepBy="1" initialValue="0" max="999" min="0" />
+            				</valueFactory>
+                           <tooltip>
+                              <Tooltip text="0 displays all accessories." />
+                           </tooltip>
+                        </Spinner>
+                        <Label layoutX="1029.0" layoutY="15.0" text="sort by keys" />
+                        <Label id="quantity_error_message" layoutX="477.0" layoutY="36.0" textFill="RED" />
+                        <TextField id="brand_textfield" layoutX="871.0" layoutY="11.0" />
+                        <Label layoutX="829.0" layoutY="15.0" prefHeight="17.0" prefWidth="42.0" text="Brand:" />
+                     </children>
+                  </AnchorPane>
+            </content>
+          </Tab>
+          <Tab id="basket_tab" text="Basket">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <TableView id="basket" layoutX="393.0" layoutY="59.0" prefHeight="422.0" prefWidth="437.0">
+                          <columns>
+                            <TableColumn prefWidth="302.0" text="Item" />
+                            <TableColumn prefWidth="134.0" text="Retail Price" />
+                          </columns>
+                        </TableView>
+                        <Button id="sign_out2" fx:id="sign_out_button2" layoutX="767.0" layoutY="542.0" mnemonicParsing="false" text="Sign Out" />
+                        <Button id="remove_item" layoutX="568.0" layoutY="542.0" mnemonicParsing="false" text="Remove Item" />
+                        <Label id="total_cost" layoutX="597.0" layoutY="509.0" />
+                        <Button id="clear_basket" layoutX="393.0" layoutY="542.0" mnemonicParsing="false" text="Clear basket" />
+                     </children>
+                  </AnchorPane>
+            </content>
+          </Tab>
+            <Tab id="checkout_tab" text="Checkout">
+              <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <Label layoutX="98.0" layoutY="75.0" prefHeight="27.0" prefWidth="217.0" text="Select payment method:">
+                           <font>
+                              <Font size="18.0" />
+                           </font></Label>
+                        <RadioButton id="credit_card_radio_button" layoutX="134.0" layoutY="125.0" mnemonicParsing="false" text="Credit Card">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                           <toggleGroup>
+                              <ToggleGroup fx:id="payment_method" />
+                           </toggleGroup></RadioButton>
+                        <RadioButton id="paypal_radio_button" layoutX="134.0" layoutY="176.0" mnemonicParsing="false" text="PayPal" toggleGroup="$payment_method">
+                           <font>
+                              <Font size="14.0" />
+                           </font></RadioButton>
+                        <StackPane layoutX="362.0" layoutY="75.0" prefHeight="431.0" prefWidth="775.0">
+                           <children>
+                              <Pane id="paypal_pane" prefHeight="424.0" prefWidth="788.0" style="-fx-border-color: blue;">
+                                 <children>
+                                    <Label id="email_address_label" layoutX="29.0" layoutY="52.0" prefHeight="43.0" prefWidth="171.0" text="Enter email address:">
+                                       <font>
+                                          <Font size="18.0" />
+                                       </font>
+                                    </Label>
+                                    <TextField id="email_address_textfield" layoutX="200.0" layoutY="61.0" prefHeight="25.0" prefWidth="223.0" />
+                                    <Label id="paypal_error_label" layoutX="237.0" layoutY="172.0" prefHeight="27.0" prefWidth="277.0" textFill="RED">
+                                       <font>
+                                          <Font size="18.0" />
+                                       </font>
+                                    </Label>
+                                    <Label id="email_checkout_confirmation_label" layoutX="29.0" layoutY="229.0" prefHeight="27.0" prefWidth="719.0">
+                                       <font>
+                                          <Font size="18.0" />
+                                       </font>
+                                    </Label>
+                                    <Button id="paypal_checkout_button" layoutX="470.0" layoutY="61.0" mnemonicParsing="false" text="Checkout" />
+                                 </children>
+                              </Pane>
+                              <Pane id="card_payment_pane" prefHeight="414.0" prefWidth="594.0" style="-fx-border-color: red;">
+                                 <children>
+                                    <Label id="card_number_label" layoutX="32.0" layoutY="51.0" prefHeight="27.0" prefWidth="118.0" text="Card number:">
+                                       <font>
+                                          <Font size="18.0" />
+                                       </font>
+                                    </Label>
+                                    <Label id="secuirity_code_label" layoutX="32.0" layoutY="78.0" prefHeight="40.0" prefWidth="124.0" text="Secuirity Code:">
+                                       <font>
+                                          <Font size="18.0" />
+                                       </font>
+                                    </Label>
+                                    <TextField id="card_number_textfield" layoutX="156.0" layoutY="52.0" prefHeight="25.0" prefWidth="229.0" />
+                                    <TextField id="secuirity_code_textfield" layoutX="169.0" layoutY="86.0" />
+                                    <Label id="card_payment_error_label" layoutX="237.0" layoutY="164.0" prefHeight="27.0" prefWidth="248.0" textFill="RED">
+                                       <font>
+                                          <Font size="18.0" />
+                                       </font>
+                                    </Label>
+                                    <Label id="card_payment_confirmation_label" layoutX="35.0" layoutY="202.0" prefHeight="27.0" prefWidth="700.0">
+                                       <font>
+                                          <Font size="18.0" />
+                                       </font>
+                                    </Label>
+                                    <Button id="card_checkout_button" layoutX="452.0" layoutY="52.0" mnemonicParsing="false" text="Checkout" />
+                                 </children>
+                              </Pane>
+                           </children>
+                        </StackPane>
+                        <Button id="sign_out3" layoutX="1074.0" layoutY="541.0" mnemonicParsing="false" text="Sign Out" />
+                     </children>
+                  </AnchorPane>
+              </content>
+            </Tab>
+            <Tab text="Add product">
+              <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <TextField id="barcode_textfield" layoutX="818.0" layoutY="104.0" />
+                        <Label layoutX="725.0" layoutY="106.0" text="Barcode">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="495.0" layoutY="29.0" prefHeight="27.0" prefWidth="147.0" text="Add new product">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Label>
+                        <TextField id="add_brand_textfield" layoutX="818.0" layoutY="151.0" />
+                        <TextField id="colour_textfield" layoutX="818.0" layoutY="197.0" />
+                        <TextField id="original_cost_textfield" layoutX="822.0" layoutY="374.0" />
+                        <TextField id="retail_price_textfield" layoutX="822.0" layoutY="418.0" />
+                        <Label layoutX="725.0" layoutY="153.0" text="Brand">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="723.0" layoutY="200.0" text="Colour">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="712.0" layoutY="283.0" text="Connectivity">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="717.0" layoutY="335.0" text="Quantity">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="708.0" layoutY="377.0" prefHeight="20.0" prefWidth="112.0" text="Original Cost     £">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="712.0" layoutY="421.0" prefHeight="20.0" prefWidth="106.0" text="Retail price       £">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Label>
+                        <RadioButton id="wireless_radio_button" layoutX="847.0" layoutY="282.0" mnemonicParsing="false" prefHeight="22.0" prefWidth="65.0" text="Wireless">
+                           <toggleGroup>
+                              <ToggleGroup fx:id="connectivity" />
+                           </toggleGroup>
+                        </RadioButton>
+                        <RadioButton id="wired_radio_button" layoutX="849.0" layoutY="306.0" mnemonicParsing="false" text="Wired" toggleGroup="$connectivity" />
+                        <Spinner id="quantity_spinner" layoutX="822.0" layoutY="333.0">
+       						<valueFactory>
+               					<SpinnerValueFactory.IntegerSpinnerValueFactory amountToStepBy="1" initialValue="1" max="999" min="1" />
+            				</valueFactory>
+                        </Spinner>
+                        <RadioButton id="mouse_radio_button" layoutX="295.0" layoutY="108.0" mnemonicParsing="false" text="Mouse">
+                           <toggleGroup>
+                              <ToggleGroup fx:id="product_type" />
+                           </toggleGroup>
+                        </RadioButton>
+                        <RadioButton id="keyboard_radio_button" layoutX="295.0" layoutY="145.0" mnemonicParsing="false" text="Keyboard" toggleGroup="$product_type" />
+                        <Label layoutX="159.0" layoutY="106.0" text="Product type">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Label>
+                        <Label id="additional_information_label" layoutX="716.0" layoutY="459.0" prefHeight="20.0" prefWidth="96.0">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Label>
+                        <Spinner id="number_of_keys_spinner" layoutX="822.0" layoutY="456.0">
+       						<valueFactory>
+               					<SpinnerValueFactory.IntegerSpinnerValueFactory amountToStepBy="1" initialValue="1" max="999" min="1" />
+            				</valueFactory>
+                        </Spinner>
+                        <Button id="add_item_button" layoutX="832.0" layoutY="553.0" mnemonicParsing="false" text="Add item" />
+                        <RadioButton id="uk_layout_radio_button" layoutX="843.0" layoutY="460.0" mnemonicParsing="false" text="UK Layout">
+                           <toggleGroup>
+                              <ToggleGroup fx:id="keyboard_layouts" />
+                           </toggleGroup>
+                        </RadioButton>
+                        <RadioButton id="us_layout_radio_button" layoutX="843.0" layoutY="498.0" mnemonicParsing="false" text="US layout" toggleGroup="$keyboard_layouts" />
+                        <Label id="add_item_confirmation_label" layoutX="281.0" layoutY="314.0" textFill="RED">
+                           <font>
+                              <Font size="18.0" />
+                           </font></Label>
+                        <Label layoutX="686.0" layoutY="240.0" text="Type e.g. (gaming)">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Label>
+                        <TextField id="device_type_textfield" layoutX="818.0" layoutY="237.0">
+       	                  <tooltip>
+                              <Tooltip text="0 displays all accessories." />
+                           </tooltip>
+                        </TextField>
+                        <Button id="sign_out4" layoutX="508.0" layoutY="553.0" mnemonicParsing="false" text="Sign out" />
+                     </children></AnchorPane>
+              </content>
+            </Tab>
+        </tabs>
+      </TabPane>
+   </root>
+</Scene>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.Scene?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<Scene xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.LoginController">
+   <root>
+      <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0">
+         <children>
+            <ComboBox id="user_select" layoutX="199.0" layoutY="188.0" prefWidth="204.0" promptText="Select account" />
+            <Button layoutX="273.0" layoutY="240.0" mnemonicParsing="false" onAction="#openStore" text="LOG IN" />
+            <Label layoutX="139.0" layoutY="113.0" text="Cassie's Computer Accessories">
+               <font>
+                  <Font size="24.0" />
+               </font>
+            </Label>
+            <Label id="error_message1" alignment="CENTER" layoutX="163.0" layoutY="294.0" prefHeight="17.0" prefWidth="276.0" text="Please select an account" textFill="RED" visible="false" />
+         </children>
+      </AnchorPane>
+   </root>
+</Scene>
