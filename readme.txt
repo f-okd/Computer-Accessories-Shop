@@ -1,3 +1,7 @@
+ Two types of roles were created: "Admin" and "Customer".  Once the user logs into the system by choosing from the list of available usernames, they should be able to access the different functionalities according to their roles. This had full GUI functionality using JavaFX and Scenebuilder.
+ 
+ ----------------------------------------------------- ----------------------------------------------------- -----------------------------------------------------
+
 You need to have JavaFX sdk installed.
 VM Argument template:
 --module-path "\path\to\javafx-sdk-17.0.1\lib" --add-modules javafx.controls,javafx.fxml
